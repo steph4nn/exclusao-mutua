@@ -17,6 +17,7 @@ def p1():
         numero += 1
         mutex.release()
         print('P1:', numero)
+        time.sleep(1)
 
 def p2():
     global numero
@@ -24,8 +25,9 @@ def p2():
         global mutex
         mutex.acquire()
         numero += 1
-        print('P2:', numero)
         mutex.release()
+        print('P2:', numero)
+        time.sleep(1)
 
 
 t_p1 = threading.Thread(target=p1)
